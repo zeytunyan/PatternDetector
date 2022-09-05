@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatternDetector.Detectors.CompositeDetector">
+    <Position X="20.75" Y="10" Width="1.75" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="21.5" Y="9.625" />
+        <Point X="21.5" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAABAAAAAAAoAAAABAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Detectors\CompositeDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.Detectors.IteratorDetector">
+    <Position X="22.75" Y="10" Width="2.25" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="23.812" Y="9.625" />
+        <Point X="23.812" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIABAAAAAAAAQIAEAAAAAAAABAAAABAA=</HashCode>
+      <FileName>Detectors\IteratorDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.Detectors.SingletonDetector">
+    <Position X="30.25" Y="10" Width="2" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="31.25" Y="9.625" />
+        <Point X="31.25" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAIgQCAAAAABEAAAAAAAAAAAAECBCCAAA=</HashCode>
+      <FileName>Detectors\SingletonDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.Detectors.TemplateMethodDetector">
+    <Position X="32.5" Y="10" Width="2" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="33.5" Y="9.625" />
+        <Point X="33.5" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAIAAAAAAAAAAAAAAAAAAAAAAgAQAAAAA=</HashCode>
+      <FileName>Detectors\TemplateMethodDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.ClassAnalyzer">
+    <Position X="14.25" Y="9" Width="1.5" />
+    <AssociationLine Name="Detectors" Type="PatternDetector.PatternDetector">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.372" Y="0.151" Height="0.182" Width="1.203" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ClassResults" Type="System.String">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.147" Y="0.543" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEACAA=</HashCode>
+      <FileName>ClassAnalyzer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Detectors" />
+      <Property Name="ClassResults" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PatternDetector.Demonstration">
+    <Position X="4" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEAAAAAAIAAAAAAAAAAAAAAAAAFAQAAAAAAAE=</HashCode>
+      <FileName>Demonstration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.DocumentAnalyzer">
+    <Position X="11.75" Y="9" Width="2" />
+    <AssociationLine Name="DocumentResults" Type="PatternDetector.DocumentResult" FixedToPoint="true">
+      <Path>
+        <Point X="13.062" Y="10.555" />
+        <Point X="13.062" Y="11.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.103" Y="0.273" Height="0.182" Width="1.294" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DocumentAnalyzer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="DocumentResults" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PatternDetector.PatternDetector">
+    <Position X="18" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAQAAAoAAYIAAAABAAAAkEAAAAAAAEAQAAAAAAAA=</HashCode>
+      <FileName>PatternDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.Program">
+    <Position X="1.25" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAhAAAAAFAACAIQAgAAAAAgCACIAAAAABAAAkgA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.ProjectAnalyzer">
+    <Position X="9.25" Y="9" Width="2" />
+    <AssociationLine Name="ProjectResults" Type="PatternDetector.ProjectResult" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="10.555" />
+        <Point X="10.25" Y="11.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.085" Y="0.307" Height="0.182" Width="1.12" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProjectAnalyzer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ProjectResults" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PatternDetector.SolutionAnalyzer">
+    <Position X="6.75" Y="9" Width="2.25" />
+    <AssociationLine Name="SolutionResults" Type="PatternDetector.SolutionResult" FixedFromPoint="true">
+      <Path>
+        <Point X="8.062" Y="10.555" />
+        <Point X="8.062" Y="11.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.105" Y="0.293" Height="0.182" Width="1.177" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>SolutionAnalyzer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SolutionResults" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="System.String" Collapsed="true">
+    <Position X="15.25" Y="11.75" Width="1.25" />
+    <TypeIdentifier />
+    <Lollipop Position="1.05" Collapsed="true" />
+  </Class>
+  <Class Name="PatternDetector.Detectors.PrototypeDetector">
+    <Position X="28" Y="10" Width="2" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="29" Y="9.625" />
+        <Point X="29" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAIAAAAAgAAAAAAAQAAAAQAABAgAAAAAA=</HashCode>
+      <FileName>Detectors\PrototypeDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatternDetector.Detectors.ObserverDetector">
+    <Position X="25.25" Y="10" Width="2.5" />
+    <InheritanceLine Type="PatternDetector.PatternDetector" FixedFromPoint="true">
+      <Path>
+        <Point X="20.5" Y="9.625" />
+        <Point X="26.5" Y="9.625" />
+        <Point X="26.5" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAEAOAJBIQCQggAgAAAEAEcAAAAAQgAAACA=</HashCode>
+      <FileName>Detectors\ObserverDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="PatternDetector.DocumentResult">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <AssociationLine Name="ClassResults" Type="System.String" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="12.125" />
+        <Point X="15.25" Y="12.125" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.165" Y="-0.368" Height="0.182" Width="1.122" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Structs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ClassResults" />
+    </ShowAsCollectionAssociation>
+  </Struct>
+  <Struct Name="PatternDetector.ProjectResult">
+    <Position X="9.75" Y="11.5" Width="1.5" />
+    <AssociationLine Name="DocumentResults" Type="PatternDetector.DocumentResult" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="12.062" />
+        <Point X="12.75" Y="12.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.06" Y="-0.271" Height="0.182" Width="1.336" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Structs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="DocumentResults" />
+    </ShowAsCollectionAssociation>
+  </Struct>
+  <Struct Name="PatternDetector.SolutionResult">
+    <Position X="7" Y="11.5" Width="1.5" />
+    <AssociationLine Name="ProjectResults" Type="PatternDetector.ProjectResult" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="12.063" />
+        <Point X="9.75" Y="12.063" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.04" Y="-0.296" Height="0.182" Width="1.209" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ProjectResults" />
+    </ShowAsCollectionAssociation>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
