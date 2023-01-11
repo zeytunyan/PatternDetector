@@ -1,17 +1,13 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatternDetector.Detectors
 {
-    class ObserverDetector : PatternDetector
+    class ObserverDetector : AbstractPatternDetector
     {
         private IEnumerable<ISymbol> members;
         private IEnumerable<IMethodSymbol> methods;

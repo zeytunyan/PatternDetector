@@ -2,15 +2,12 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatternDetector.Detectors
 {
-    class SingletonDetector : PatternDetector
+    class SingletonDetector : AbstractPatternDetector
     {
         public SingletonDetector(TypeDeclarationSyntax typeDeclaration, SemanticModel semanticModel)
             : base(typeDeclaration, semanticModel) { }

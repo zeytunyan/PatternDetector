@@ -2,21 +2,18 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PatternDetector
+namespace PatternDetector.Detectors
 {
-    abstract class PatternDetector
+    abstract class AbstractPatternDetector
     {
         protected TypeDeclarationSyntax TypeDeclaration { get; private set; }
         protected INamedTypeSymbol TypeInfo { get; private set; }
         protected SemanticModel SemanticModel { get; private set; }
 
-        public PatternDetector(TypeDeclarationSyntax typeDeclaration, SemanticModel semanticModel) 
+        public AbstractPatternDetector(TypeDeclarationSyntax typeDeclaration, SemanticModel semanticModel)
         {
             TypeDeclaration = typeDeclaration;
             SemanticModel = semanticModel;
@@ -32,10 +29,10 @@ namespace PatternDetector
         public IEnumerable<IPropertySymbol> FindProperties(INamedTypeSymbol typeSymbol) =>
             FindMembers(typeSymbol, SymbolKind.Property).Select(member => (IPropertySymbol)member);
 
-        public IEnumerable<IFieldSymbol> FindFields(INamedTypeSymbol typeSymbol) => 
+        public IEnumerable<IFieldSymbol> FindFields(INamedTypeSymbol typeSymbol) =>
             FindMembers(typeSymbol, SymbolKind.Field).Select(field => (IFieldSymbol)field);
 
-        public IEnumerable<ISymbol> FindMembers(INamedTypeSymbol typeSymbol, SymbolKind kind) => 
+        public IEnumerable<ISymbol> FindMembers(INamedTypeSymbol typeSymbol, SymbolKind kind) =>
             typeSymbol.GetMembers().Where(mbr => mbr.Kind == kind);
 
 
@@ -58,10 +55,10 @@ namespace PatternDetector
 
             FindAncestors(namedType);
 
-            return (ancestors);
+            return ancestors;
         }
 
-        protected IEnumerable<INamedTypeSymbol> AllAncestorsAndSelf(INamedTypeSymbol namedType, bool onlyAbstract = false) => 
+        protected IEnumerable<INamedTypeSymbol> AllAncestorsAndSelf(INamedTypeSymbol namedType, bool onlyAbstract = false) =>
             AllAncestors(namedType, onlyAbstract).Prepend(namedType);
 
 
@@ -76,7 +73,7 @@ namespace PatternDetector
                 return null;
 
             IMethodBodyBaseOperation methodBody = (IMethodBodyBaseOperation)methodOperation;
-            
+
             return methodBody.BlockBody ?? methodBody.ExpressionBody;
         }
 
@@ -95,7 +92,7 @@ namespace PatternDetector
             return (MethodDeclarationSyntax)methodSyntax;
         }
 
-        protected bool IsEnumerable(ITypeSymbol type) 
+        protected bool IsEnumerable(ITypeSymbol type)
         {
             return type.SpecialType == SpecialType.System_Collections_IEnumerable ||
                 type.AllInterfaces.Any(@interface => @interface.SpecialType == SpecialType.System_Collections_IEnumerable);
