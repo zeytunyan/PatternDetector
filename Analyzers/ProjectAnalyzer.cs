@@ -1,11 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PatternDetector
+namespace PatternDetector.Analyzers
 {
     class ProjectAnalyzer
     {
@@ -20,7 +16,7 @@ namespace PatternDetector
             foreach (Document document in project.Documents)
             {
                 DocumentAnalyzer documentAnalyzer = new DocumentAnalyzer(document, compilation);
-                
+
                 if (documentAnalyzer.DocumentResults.Count > 0)
                 {
                     ProjectResults.Add(new ProjectResult(document.Name, documentAnalyzer.DocumentResults));

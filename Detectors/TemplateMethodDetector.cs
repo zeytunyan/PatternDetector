@@ -2,16 +2,11 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatternDetector.Detectors
 {
-    class TemplateMethodDetector : PatternDetector
+    class TemplateMethodDetector : AbstractPatternDetector
     {
         public TemplateMethodDetector(TypeDeclarationSyntax typeDeclaration, SemanticModel semanticModel)
             : base(typeDeclaration, semanticModel) { }

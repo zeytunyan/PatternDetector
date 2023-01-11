@@ -3,22 +3,19 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using PatternDetector.Detectors;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PatternDetector
+namespace PatternDetector.Analyzers
 {
     class ClassAnalyzer
     {
-        public Dictionary<string, PatternDetector> Detectors { get; private set; }
+        public Dictionary<string, AbstractPatternDetector> Detectors { get; private set; }
         public List<string> ClassResults { get; private set; } = new List<string>();
         public TypeDeclarationSyntax Type { get; private set; }
         public ClassAnalyzer(TypeDeclarationSyntax typeDeclaration, SemanticModel semanticModel)
         {
             Type = typeDeclaration;
 
-            Detectors = new Dictionary<string, PatternDetector>
+            Detectors = new Dictionary<string, AbstractPatternDetector>
             {
                 { "Composite", new CompositeDetector(typeDeclaration, semanticModel) },
                 { "Iterator", new IteratorDetector(typeDeclaration, semanticModel) },
@@ -28,7 +25,7 @@ namespace PatternDetector
                 { "Template Method", new TemplateMethodDetector(typeDeclaration, semanticModel) },
             };
 
-            foreach (KeyValuePair<string, PatternDetector> detector in Detectors)
+            foreach (KeyValuePair<string, AbstractPatternDetector> detector in Detectors)
             {
                 if (detector.Value.Detect())
                 {
@@ -36,7 +33,7 @@ namespace PatternDetector
                     Program.eachPatternCount[detector.Key]++;
                     Program.detectedPatternsCount++;
                 }
-                    
+
             }
         }
     }
