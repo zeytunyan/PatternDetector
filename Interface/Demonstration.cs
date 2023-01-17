@@ -1,8 +1,9 @@
 ﻿using PatternDetector.Analyzers;
+using PatternDetector.Structs;
 using System;
 using System.Collections.Generic;
 
-namespace PatternDetector
+namespace PatternDetector.Interface
 {
     class Demonstration
     {
@@ -39,7 +40,7 @@ namespace PatternDetector
 
             Console.WriteLine("Результаты поиска:");
             Console.WriteLine(rowBorder);
-            Console.WriteLine(MakeRow(borderData, new string[]{ "Номер", "Проект", "Документ", "Класс/Интерфейс/Структура", "Паттерны" }));
+            Console.WriteLine(MakeRow(borderData, new string[] { "Номер", "Проект", "Документ", "Класс/Интерфейс/Структура", "Паттерны" }));
             Console.WriteLine(MakeRowBorder(borderData, "="));
 
             int num = 0;
@@ -59,7 +60,7 @@ namespace PatternDetector
                             projectCell,
                             documentCell,
                             documentResult.ClassName,
-                            String.Join<string>(", ", documentResult.ClassResults)
+                            string.Join<string>(", ", documentResult.ClassResults)
                         };
 
                         Console.WriteLine(MakeRow(borderData, values));
@@ -97,7 +98,7 @@ namespace PatternDetector
                 Console.WriteLine(MakeRow(borderData, mainRow));
                 Console.WriteLine(rowBorder);
             }
-            
+
             Console.WriteLine();
         }
 
@@ -109,7 +110,7 @@ namespace PatternDetector
                 { 30, 1 },
                 { 11, 1 }
             };
-            
+
             string rowBorder = MakeRowBorder(borderData, "-");
 
             Console.WriteLine("Статистика по паттернам:");
@@ -131,10 +132,10 @@ namespace PatternDetector
 
         private string MakeCell(string str, int cellLength, string placeHolder = "...")
         {
-            if (cellLength < 3) 
+            if (cellLength < 3)
                 cellLength = 3;
-            
-            if (placeHolder.Length > 3) 
+
+            if (placeHolder.Length > 3)
                 placeHolder = "...";
 
             if (str.Length <= cellLength)

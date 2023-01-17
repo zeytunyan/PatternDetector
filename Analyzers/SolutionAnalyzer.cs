@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
+using PatternDetector.Structs;
 using System.Collections.Generic;
 
 namespace PatternDetector.Analyzers
